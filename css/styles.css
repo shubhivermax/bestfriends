@@ -1,5 +1,5 @@
 /* Late Night Show — shared tokens + layout (Figma-aligned) */
-@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap");
 
 :root {
   --bg-welcome: #e2e7a0;
@@ -27,8 +27,28 @@
   --text-muted: #5c4033;
   --white: #ffffff;
 
-  --font-pixel: "Press Start 2P", system-ui, sans-serif;
-  --font-readable: "VT323", monospace;
+  --font-pixel: "Pixelify Sans", system-ui, sans-serif;
+  --font-readable: "Pixelify Sans", system-ui, sans-serif;
+
+  /* Global type scale (Pixelify Sans reads smaller than old bitmap font at same px) */
+  --text-body: 25px;
+  --text-nav: 15px;
+  --text-title: clamp(15px, 2.8vw, 20px);
+  --text-subtitle: 28px;
+  --text-muted: 26px;
+  --text-ui: 15px;
+  --text-ui-sm: 14px;
+  --text-input: 28px;
+  --text-display: 30px;
+  --text-welcome-banner: clamp(12px, 2vw, 15px);
+  --text-hub-title: clamp(12px, 2.2vw, 16px);
+  --text-hub-btn: 20px;
+  --text-letter-h: 14px;
+  --text-letter-body: 28px;
+  --text-memory: 26px;
+  --text-game-hud: 30px;
+  --text-fiji: 32px;
+  --text-footer: 22px;
 
   --radius-xl: 36px;
   --radius-lg: 28px;
@@ -50,7 +70,7 @@ body {
   margin: 0;
   min-height: 100%;
   font-family: var(--font-pixel);
-  font-size: 12px;
+  font-size: var(--text-body);
   line-height: 1.7;
   color: var(--text);
   -webkit-font-smoothing: antialiased;
@@ -80,6 +100,10 @@ body {
 
 .page--verify {
   background: var(--bg-verify);
+}
+
+.page--verify #gate-form label {
+  font-size: var(--text-ui-sm);
 }
 
 .page--welcome {
@@ -130,7 +154,7 @@ body {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(8px);
   border-bottom: 3px solid rgba(0, 0, 0, 0.08);
-  font-size: 9px;
+  font-size: var(--text-nav);
 }
 
 .site-nav a {
@@ -177,7 +201,7 @@ body {
 
 /* Typography */
 h1.page-title {
-  font-size: clamp(11px, 2.5vw, 14px);
+  font-size: var(--text-title);
   text-align: center;
   margin: 0 0 20px;
   max-width: 36em;
@@ -186,7 +210,7 @@ h1.page-title {
 
 .subtitle {
   font-family: var(--font-readable);
-  font-size: 22px;
+  font-size: var(--text-subtitle);
   text-align: center;
   margin: 0 0 16px;
   color: var(--text);
@@ -194,7 +218,7 @@ h1.page-title {
 
 .muted {
   font-family: var(--font-readable);
-  font-size: 20px;
+  font-size: var(--text-muted);
   color: var(--text-muted);
 }
 
@@ -213,7 +237,7 @@ h1.page-title {
 /* Buttons */
 .btn-pill {
   font-family: var(--font-pixel);
-  font-size: 11px;
+  font-size: var(--text-ui);
   padding: 14px 20px;
   border-radius: 999px;
   border: 3px solid #2a2a2a;
@@ -258,7 +282,7 @@ h1.page-title {
 
 .btn-gray {
   font-family: var(--font-pixel);
-  font-size: 10px;
+  font-size: var(--text-ui-sm);
   padding: 12px 28px;
   border-radius: 999px;
   border: 3px solid #888;
@@ -279,7 +303,7 @@ h1.page-title {
 .input-pill {
   width: 100%;
   font-family: var(--font-readable);
-  font-size: 22px;
+  font-size: var(--text-input);
   padding: 14px 18px;
   border-radius: 999px;
   border: 3px solid #333;
@@ -290,7 +314,7 @@ h1.page-title {
   width: 100%;
   min-height: 140px;
   font-family: var(--font-readable);
-  font-size: 22px;
+  font-size: var(--text-input);
   padding: 16px;
   border-radius: var(--radius-md);
   border: 3px solid rgba(0, 0, 0, 0.12);
@@ -325,7 +349,7 @@ h1.page-title {
   background: var(--gray-screen);
   padding: 20px;
   font-family: var(--font-readable);
-  font-size: 24px;
+  font-size: var(--text-display);
   line-height: 1.35;
   color: var(--text);
   transition: opacity 0.25s ease;
@@ -347,7 +371,7 @@ h1.page-title {
   background: var(--pink-banner);
   border: 3px solid rgba(0, 0, 0, 0.1);
   text-align: center;
-  font-size: clamp(9px, 1.8vw, 11px);
+  font-size: var(--text-welcome-banner);
   line-height: 1.9;
   color: #8b3a4c;
 }
@@ -448,7 +472,7 @@ h1.page-title {
   border-radius: var(--radius-lg);
   background: var(--pink-deep);
   border: 3px solid #2a2a2a;
-  font-size: clamp(9px, 2vw, 12px);
+  font-size: var(--text-hub-title);
   text-align: center;
   line-height: 1.8;
 }
@@ -465,7 +489,7 @@ h1.page-title {
 
 .hub-btn {
   font-family: var(--font-pixel);
-  font-size: 9px;
+  font-size: var(--text-hub-btn);
   padding: 16px 12px;
   border-radius: 14px;
   border: 3px solid #2a2a2a;
@@ -516,7 +540,7 @@ h1.page-title {
 
 .heart {
   position: absolute;
-  font-size: 18px;
+  font-size: 22px;
   opacity: 0.35;
   animation: float 8s ease-in-out infinite;
 }
@@ -558,14 +582,14 @@ h1.page-title {
 }
 
 .letter-block h2 {
-  font-size: 11px;
+  font-size: var(--text-letter-h);
   margin: 0 0 12px;
   color: #8b3a4c;
 }
 
 .letter-block p {
   font-family: var(--font-readable);
-  font-size: 22px;
+  font-size: var(--text-letter-body);
   margin: 0;
   line-height: 1.4;
 }
@@ -577,9 +601,15 @@ h1.page-title {
   text-align: left;
 }
 
+.memory-list h2 {
+  font-size: var(--text-letter-h);
+  text-align: center;
+  margin: 28px 0 12px;
+}
+
 .memory-item {
   font-family: var(--font-readable);
-  font-size: 20px;
+  font-size: var(--text-memory);
   padding: 12px 14px;
   margin-bottom: 10px;
   border-radius: var(--radius-md);
@@ -606,7 +636,7 @@ h1.page-title {
 
 .game-hud {
   font-family: var(--font-readable);
-  font-size: 24px;
+  font-size: var(--text-game-hud);
   margin-top: 12px;
   text-align: center;
 }
@@ -633,7 +663,7 @@ h1.page-title {
 
 .fiji-card p {
   font-family: var(--font-readable);
-  font-size: 26px;
+  font-size: var(--text-fiji);
   margin: 0;
   line-height: 1.35;
 }
@@ -647,7 +677,7 @@ h1.page-title {
   padding: 10px;
   text-align: center;
   font-family: var(--font-readable);
-  font-size: 18px;
+  font-size: var(--text-footer);
   color: rgba(0, 0, 0, 0.45);
   background: linear-gradient(transparent, rgba(255, 255, 255, 0.9));
 }
@@ -701,6 +731,6 @@ h1.page-title {
   }
 
   body {
-    font-size: 11px;
+    font-size: 15px;
   }
 }
