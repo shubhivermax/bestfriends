@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Welcome — Late Night Show</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="crt">
+    <script src="js/auth.js"></script>
+    <script>
+      LNS.requireAuth();
+    </script>
+    <div class="hearts-bg" aria-hidden="true"></div>
+    <nav class="site-nav">
+      <a href="welcome.html">welcome</a>
+      <a href="experience.html">experience</a>
+      <a href="memory.html">memories</a>
+      <a href="index.html">lock</a>
+    </nav>
+    <main class="page page--welcome">
+      <div class="welcome-card card card--white">
+        <div class="welcome-header">
+          Welcome to the official Late Night Show w/ Shubhi and Archi website!
+        </div>
+        <div class="welcome-stage pattern-gingham">
+          <div class="welcome-char welcome-char--left" aria-hidden="true">
+            <svg viewBox="0 0 64 96" width="100%" height="auto">
+              <rect x="22" y="8" width="20" height="22" fill="#5d4037" />
+              <rect x="18" y="30" width="28" height="8" fill="#3e2723" />
+              <rect x="20" y="38" width="24" height="28" fill="#d7ccc8" />
+              <rect x="16" y="38" width="8" height="28" fill="#424242" />
+              <rect x="40" y="38" width="8" height="28" fill="#424242" />
+              <rect x="24" y="66" width="8" height="22" fill="#3e2723" />
+              <rect x="32" y="66" width="8" height="22" fill="#3e2723" />
+              <rect x="20" y="86" width="10" height="6" fill="#212121" />
+              <rect x="34" y="86" width="10" height="6" fill="#212121" />
+            </svg>
+          </div>
+          <div class="welcome-char welcome-char--right" aria-hidden="true">
+            <svg viewBox="0 0 64 96" width="100%" height="auto">
+              <rect x="20" y="10" width="24" height="24" fill="#212121" />
+              <rect x="18" y="34" width="28" height="8" fill="#fafafa" />
+              <rect x="22" y="42" width="20" height="26" fill="#eeeeee" />
+              <rect x="14" y="44" width="8" height="20" fill="#fafafa" />
+              <rect x="42" y="44" width="8" height="20" fill="#fafafa" />
+              <rect x="18" y="18" width="28" height="6" fill="#212121" />
+              <rect x="24" y="68" width="8" height="20" fill="#eeeeee" />
+              <rect x="32" y="68" width="8" height="20" fill="#eeeeee" />
+              <rect x="22" y="86" width="10" height="6" fill="#212121" />
+              <rect x="34" y="86" width="10" height="6" fill="#212121" />
+            </svg>
+          </div>
+          <button type="button" class="btn-pill welcome-cta" id="join-btn">
+            Press Enter to Join the Experience!
+          </button>
+        </div>
+      </div>
+      <p class="muted" style="margin-top: 16px; max-width: 28em; text-align: center">
+        Tip: click the button or press Enter on your keyboard.
+      </p>
+    </main>
+    <footer class="site-footer">made with pixelated love · 2026</footer>
+    <script src="js/hearts.js"></script>
+    <script>
+      (function () {
+        function go() {
+          window.location.href = "experience.html";
+        }
+        document.getElementById("join-btn").addEventListener("click", go);
+        document.addEventListener("keydown", function (e) {
+          if (e.key !== "Enter") return;
+          var tag = (e.target && e.target.tagName) || "";
+          if (tag === "INPUT" || tag === "TEXTAREA") return;
+          go();
+        });
+      })();
+    </script>
+  </body>
+</html>

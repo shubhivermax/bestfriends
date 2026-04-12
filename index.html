@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Verify — Late Night Show</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="crt">
+    <div class="hearts-bg" aria-hidden="true"></div>
+    <nav class="site-nav">
+      <a href="index.html">verify</a>
+    </nav>
+    <main class="page page--verify">
+      <h1 class="page-title">Verify that you're Archi...</h1>
+      <div class="card card--modal" id="gate-card">
+        <p style="text-align: center; margin: 0 0 20px; line-height: 1.9">
+          Confidential Letters Lie Ahead!
+        </p>
+        <form id="gate-form" style="display: flex; flex-direction: column; gap: 16px">
+          <label for="gate-pass" style="font-size: 10px">Enter password:</label>
+          <input
+            id="gate-pass"
+            class="input-pill"
+            type="password"
+            autocomplete="current-password"
+            required
+          />
+          <button type="submit" class="btn-gray" id="gate-submit">Enter</button>
+          <p id="gate-msg" class="muted" style="min-height: 1.2em; margin: 0; text-align: center"></p>
+        </form>
+        <div
+          style="margin-top: 24px; text-align: right; opacity: 0.95"
+          aria-hidden="true"
+        >
+          <svg width="120" height="90" viewBox="0 0 120 90" style="max-width: 100%">
+            <rect x="70" y="55" width="6" height="28" fill="#4a7c3a" />
+            <rect x="76" y="50" width="6" height="32" fill="#4a7c3a" />
+            <circle cx="60" cy="38" r="14" fill="#ffeb3b" stroke="#333" stroke-width="2" />
+            <circle cx="88" cy="42" r="12" fill="#ffeb3b" stroke="#333" stroke-width="2" />
+            <ellipse cx="62" cy="52" rx="10" ry="6" fill="#4a7c3a" />
+          </svg>
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer">for Archi · shhh 🤫</footer>
+    <!-- Bump ?v= when you change js/config.js so browsers fetch the new password -->
+    <script src="js/config.js?v=2"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/hearts.js"></script>
+    <script>
+      (function () {
+        if (window.LNS && window.LNS.isVerified()) {
+          window.location.href = "welcome.html";
+          return;
+        }
+        var form = document.getElementById("gate-form");
+        var pass = document.getElementById("gate-pass");
+        var msg = document.getElementById("gate-msg");
+        var card = document.getElementById("gate-card");
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          var expected = String(
+            window.LNS_PASSWORD != null ? window.LNS_PASSWORD : "bestie"
+          )
+            .trim()
+            .toLowerCase();
+          var ok =
+            (pass.value || "").trim().toLowerCase() === expected;
+          if (ok) {
+            window.LNS.setVerified();
+            window.location.href = "welcome.html";
+          } else {
+            msg.textContent = "Not quite — try again?";
+            card.classList.remove("shake");
+            void card.offsetWidth;
+            card.classList.add("shake");
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

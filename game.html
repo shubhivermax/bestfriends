@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Play a Game</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="crt">
+    <script src="js/auth.js"></script>
+    <script>
+      LNS.requireAuth();
+    </script>
+    <div class="hearts-bg" aria-hidden="true"></div>
+    <nav class="site-nav">
+      <a href="experience.html">← hub</a>
+      <a href="jokes.html">inside joke</a>
+      <a href="affirmations.html">affirmations</a>
+    </nav>
+    <main class="page page--game">
+      <h1 class="page-title">Catch the Star</h1>
+      <p class="muted" style="margin: 0 0 16px; text-align: center; max-width: 28em">
+        Move your mouse (or finger on touch) to slide the paddle. Catch the falling star for
+        points!
+      </p>
+      <div class="game-canvas-wrap">
+        <canvas id="game-canvas" class="game-canvas" width="400" height="420"></canvas>
+      </div>
+      <p class="game-hud">Score: <span id="game-score">0</span></p>
+    </main>
+    <footer class="site-footer">high score: friendship (unbeatable)</footer>
+    <script src="js/hearts.js"></script>
+    <script src="js/game.js"></script>
+  </body>
+</html>

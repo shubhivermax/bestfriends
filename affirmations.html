@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shubhi's Affirmations</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="crt">
+    <script src="js/auth.js"></script>
+    <script>
+      LNS.requireAuth();
+    </script>
+    <div class="hearts-bg" aria-hidden="true"></div>
+    <nav class="site-nav">
+      <a href="experience.html">← hub</a>
+      <a href="jokes.html">inside joke</a>
+      <a href="letters.html">letters</a>
+    </nav>
+    <main class="page page--affirm" style="gap: 20px">
+      <button
+        type="button"
+        class="btn-circle"
+        id="affirm-btn"
+        aria-label="Get a new affirmation"
+      ></button>
+      <p class="subtitle" style="margin: 0">Press button for new affirmation</p>
+      <div class="display-frame">
+        <div id="affirm-text" class="display-inner"></div>
+      </div>
+    </main>
+    <footer class="site-footer">you deserve the softest pixels</footer>
+    <script src="js/hearts.js"></script>
+    <script src="js/affirmations.js"></script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Memory Lane</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="crt">
+    <script src="js/auth.js"></script>
+    <script>
+      LNS.requireAuth();
+    </script>
+    <div class="hearts-bg" aria-hidden="true"></div>
+    <nav class="site-nav">
+      <a href="experience.html">← hub</a>
+      <a href="welcome.html">welcome</a>
+      <a href="letters.html">letters</a>
+    </nav>
+    <main class="page page--memory">
+      <h1 class="page-title">Do you have a memory of us you want to add?</h1>
+      <div class="card card--pink" style="position: relative; max-width: 560px">
+        <p style="text-align: center; margin: 0 0 18px; line-height: 1.8">
+          Type in a memory to add it to the collection!
+        </p>
+        <form id="memory-form" style="display: flex; flex-direction: column; gap: 14px">
+          <label for="memory-input" class="visually-hidden">Your memory</label>
+          <textarea
+            id="memory-input"
+            class="textarea-block"
+            placeholder="A tiny scene, a line, a day that still glows..."
+            maxlength="2000"
+          ></textarea>
+          <button type="submit" class="btn-pill" style="align-self: center">
+            Add to collection
+          </button>
+        </form>
+        <div
+          style="margin-top: 28px; display: flex; justify-content: center; gap: 8px"
+          aria-hidden="true"
+        >
+          <svg width="100" height="56" viewBox="0 0 100 56">
+            <ellipse cx="30" cy="48" rx="22" ry="8" fill="#6b9e6b" />
+            <ellipse cx="70" cy="48" rx="22" ry="8" fill="#6b9e6b" />
+            <circle cx="28" cy="28" r="10" fill="#f48fb1" stroke="#333" stroke-width="2" />
+            <circle cx="44" cy="22" r="8" fill="#f48fb1" stroke="#333" stroke-width="2" />
+            <circle cx="72" cy="26" r="12" fill="#ffeb3b" stroke="#333" stroke-width="2" />
+            <circle cx="86" cy="30" r="10" fill="#ffeb3b" stroke="#333" stroke-width="2" />
+          </svg>
+        </div>
+      </div>
+      <section class="memory-list" aria-label="Saved memories">
+        <h2 style="font-size: 10px; text-align: center; margin: 28px 0 12px">
+          The collection (saved on this device)
+        </h2>
+        <div id="memory-list"></div>
+      </section>
+    </main>
+    <footer class="site-footer">stories stay local in your browser</footer>
+    <script src="js/hearts.js"></script>
+    <script src="js/memories.js"></script>
+  </body>
+</html>
