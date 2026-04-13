@@ -1,5 +1,11 @@
 (function () {
   var STORAGE_KEY = "lns_memories_v1";
+  var PRESET_MEMORIES = [
+    "Our Dua Lipa sleepover when we made Dalgona coffee.",
+    "French tuitions during COVID",
+    "When you came to my society when Steve cheated on me and we confronted him together.",
+    "My 17th birthday sleepover at the Hyatt."
+  ];
 
   function load() {
     try {
@@ -46,16 +52,18 @@
     var listEl = document.getElementById("memory-list");
     if (!form || !input || !listEl) return;
 
-    var memories = load();
+    var userMemories = load();
+    var memories = PRESET_MEMORIES.concat(userMemories);
     render(listEl, memories);
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var text = (input.value || "").trim();
       if (!text) return;
-      memories.push(text);
-      save(memories);
+      userMemories.push(text);
+      save(userMemories);
       input.value = "";
+      memories = PRESET_MEMORIES.concat(userMemories);
       render(listEl, memories);
     });
   });

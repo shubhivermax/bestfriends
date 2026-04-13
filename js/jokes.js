@@ -1,13 +1,13 @@
 (function () {
   var JOKES = [
-    "Why did the pixel go to therapy? Too many unresolved edges.",
-    "Our friendship is like Wi‑Fi: invisible, strong, and occasionally asks for a password.",
-    "I told my code to be more like you — now it never throws exceptions, it just vibes.",
-    "Parallel lines have so much in common. It's a shame they'll never meet — unlike us, who somehow always do.",
-    "If we were a duo name, it'd be 'Runtime Error' because we never stop running.",
-    "You're the 'skip intro' to my bad days.",
-    "I'm not lazy — I'm in energy-saving mode, like a good retro console.",
-    "We don't do small talk. We do side quests.",
+    "MANASH and Zellies.",
+    "When Yash Jadhav proposed you and we laughed in his face. Rly sorry but like it was funny man",
+    "When you fell at my bday party. I'M DEAD like laughing rn.",
+    "Atharva Devkar from Explosive Dance Institute.",
+    "omg remember avinash leonardo. what a time man. yk he does to college in florida. remember when he got tiktok famous i can't it was so cringey bye",
+    "bro, i can't even believe i'm bringing this back into existence im so embarassed but - MANAS RANADE from my society. please can we forget about this i really dont want to talk about it man.",
+    "the infamous prank call on my 13th bday when we prank called the narkhede household. can't believe his mom made us visit on my bday she was clearly very unemployed. ",
+    "kunsh turning himself into a woman like everyday. its kind of abormal how many photos i have of him being a woman. i think he will transition in the future like caitlyn jenner",
   ];
 
   function pickRandom(arr) {

@@ -21,6 +21,10 @@
       target.vy = 1.6 + Math.random() * 1.4;
     }
 
+    function getSpeedBoost() {
+      return Math.min(score * 0.14, 4.5);
+    }
+
     function draw() {
       ctx.clearRect(0, 0, W, H);
       var grd = ctx.createLinearGradient(0, 0, 0, H);
@@ -47,7 +51,7 @@
     }
 
     function tick() {
-      target.y += target.vy;
+      target.y += target.vy + getSpeedBoost();
       if (target.y > H + 30) {
         resetTarget();
       }
