@@ -12,8 +12,15 @@
     "u are THAT girl - ur cool, funny, beautiful, smart and kind. ur HER.",
   ];
 
-  function pickRandom(arr) {
-    return arr[Math.floor(Math.random() * arr.length)];
+  function shuffledCopy(arr) {
+    var copy = arr.slice();
+    for (var i = copy.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = copy[i];
+      copy[i] = copy[j];
+      copy[j] = temp;
+    }
+    return copy;
   }
 
   document.addEventListener("DOMContentLoaded", function () {
@@ -21,15 +28,29 @@
     var out = document.getElementById("affirm-text");
     if (!btn || !out) return;
 
+    var queue = shuffledCopy(AFFIRMATIONS);
+    var index = 0;
+
+    function getNextAffirmation() {
+      if (!queue.length) return "";
+      if (index >= queue.length) {
+        queue = shuffledCopy(AFFIRMATIONS);
+        index = 0;
+      }
+      var next = queue[index];
+      index += 1;
+      return next;
+    }
+
     function showNext() {
       out.classList.add("is-fading");
       setTimeout(function () {
-        out.textContent = pickRandom(AFFIRMATIONS);
+        out.textContent = getNextAffirmation();
         out.classList.remove("is-fading");
       }, 200);
     }
 
     btn.addEventListener("click", showNext);
-    out.textContent = pickRandom(AFFIRMATIONS);
+    out.textContent = getNextAffirmation();
   });
 })();

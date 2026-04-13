@@ -8,10 +8,18 @@
     "bro, i can't even believe i'm bringing this back into existence im so embarassed but - MANAS RANADE from my society. please can we forget about this i really dont want to talk about it man.",
     "the infamous prank call on my 13th bday when we prank called the narkhede household. can't believe his mom made us visit on my bday she was clearly very unemployed. ",
     "kunsh turning himself into a woman like everyday. its kind of abormal how many photos i have of him being a woman. i think he will transition in the future like caitlyn jenner",
+    "pratyush's singing. he rly posted them on instagram like wow. the confidence was crazy not to be mean but also im allowed to.",
   ];
 
-  function pickRandom(arr) {
-    return arr[Math.floor(Math.random() * arr.length)];
+  function shuffledCopy(arr) {
+    var copy = arr.slice();
+    for (var i = copy.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = copy[i];
+      copy[i] = copy[j];
+      copy[j] = temp;
+    }
+    return copy;
   }
 
   document.addEventListener("DOMContentLoaded", function () {
@@ -19,19 +27,29 @@
     var out = document.getElementById("joke-text");
     if (!btn || !out) return;
 
+    var queue = shuffledCopy(JOKES);
+    var index = 0;
+
+    function getNextJoke() {
+      if (!queue.length) return "";
+      if (index >= queue.length) {
+        queue = shuffledCopy(JOKES);
+        index = 0;
+      }
+      var next = queue[index];
+      index += 1;
+      return next;
+    }
+
     function showNext() {
       out.classList.add("is-fading");
       setTimeout(function () {
-        var next;
-        do {
-          next = pickRandom(JOKES);
-        } while (next === out.textContent && JOKES.length > 1);
-        out.textContent = next;
+        out.textContent = getNextJoke();
         out.classList.remove("is-fading");
       }, 200);
     }
 
     btn.addEventListener("click", showNext);
-    out.textContent = pickRandom(JOKES);
+    out.textContent = getNextJoke();
   });
 })();
