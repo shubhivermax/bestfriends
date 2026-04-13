@@ -1,15 +1,15 @@
 (function () {
   var AFFIRMATIONS = [
-    "You make ordinary days feel like episodes worth replaying.",
-    "Your laugh should be licensed — it's that good.",
-    "If friendship had a leaderboard, you'd be speedrunning the top.",
-    "You're allowed to rest. The show goes on, and you're still the star.",
-    "Every plot twist is easier with you in the cast.",
-    "You bring the kind of energy that turns 'fine' into 'core memory.'",
-    "Reminder: you're not 'too much.' You're the whole season.",
-    "Your heart has better writing than most season finales.",
+    "You make ordinary days have memories worth replaying.",
+    "Your laugh should be licensed it's that infectious.",
+    "You are never alone, ever, as long as you have me.",
+    "You're allowed to rest. Life is incredibly short and you deserve to life slowly when u can",
+    "You are so kind, caring, and compassionate",
+    "You make people feel seen'",
+    "Reminder: you're never too much. ur perfect yaar",
+    "u are so hot and genuinely have the body of a model.",
     "I'm grateful the universe put us in the same storyline.",
-    "Today counts — and so do you.",
+    "u are THAT girl - ur cool, funny, beautiful, smart and kind. ur HER.",
   ];
 
   function pickRandom(arr) {

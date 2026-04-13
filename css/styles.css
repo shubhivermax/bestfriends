@@ -360,6 +360,8 @@ h1.page-title {
 /* Welcome layout */
 .welcome-card {
   width: min(100%, 900px);
+  overflow: hidden;
+  background-size: 20px 20px;
 }
 
 .welcome-header {
@@ -390,17 +392,17 @@ h1.page-title {
 .welcome-char {
   position: absolute;
   bottom: 8px;
-  width: min(28%, 140px);
+  width: min(40%, 230px);
   pointer-events: none;
   image-rendering: pixelated;
 }
 
 .welcome-char--left {
-  left: 4%;
+  left: 10%;
 }
 
 .welcome-char--right {
-  right: 4%;
+  right: 10%;
 }
 
 @keyframes bob {
@@ -413,11 +415,15 @@ h1.page-title {
   }
 }
 
-.welcome-char svg {
+.welcome-char img {
+  display: block;
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
   animation: bob 3s ease-in-out infinite;
 }
 
-.welcome-char--right svg {
+.welcome-char--right img {
   animation-delay: 0.4s;
 }
 
